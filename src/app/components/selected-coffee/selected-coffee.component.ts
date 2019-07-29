@@ -16,6 +16,7 @@ export class SelectedCoffeeComponent implements OnInit {
   public price:string;
   public order = [];
 
+  public cost:number;
   public index:string;
 
   private lastOrderCount:number = 1;
@@ -26,16 +27,18 @@ export class SelectedCoffeeComponent implements OnInit {
     const obj = this.dataCoffee.getCoffeeObj(this.index);
     obj['sugar'] = 0;
     this.order.push(obj);
+    this.cost = Number(obj.price) * this.countPortions;
   }
 
   onCountChange(value:number){
+    const obj = this.dataCoffee.getCoffeeObj(this.index);
     this.countPortions = value;
     if(this.lastOrderCount>this.countPortions){
       this.order.splice(this.countPortions);
     }else if(this.lastOrderCount<this.countPortions){
       let count = this.countPortions - this.lastOrderCount;
       for (let i = 0; i < count; i++) {
-        const obj = this.dataCoffee.getCoffeeObj(this.index);
+
         const obj2 = {};
         obj2['sugar'] = 0;
         obj2['title'] = obj.title;
@@ -44,6 +47,7 @@ export class SelectedCoffeeComponent implements OnInit {
         this.order.push(obj2);
       }
     }
+    this.cost = Number(obj.price) * this.countPortions;
     this.lastOrderCount = this.countPortions;
   }
 
