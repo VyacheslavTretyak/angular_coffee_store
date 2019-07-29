@@ -11,7 +11,8 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import { SelectedCoffeeComponent } from './components/selected-coffee/selected-coffee.component';
 import {MatSliderModule} from "@angular/material/slider";
 import {FormsModule} from "@angular/forms";
-import { CartComponent } from './components/cart/cart.component';
+import {CartComponent } from './components/cart/cart.component';
+import {MatListModule} from "@angular/material";
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { CartComponent } from './components/cart/cart.component';
     MatButtonModule,
     MatGridListModule,
     MatSliderModule,
-    FormsModule
+    FormsModule,
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

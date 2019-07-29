@@ -58,10 +58,15 @@ export class DataCoffeeService {
     }
   ];
 
+  public orders = [];
 
   constructor(){}
 
   public getCoffeeObj(index){
     return this.arrayCoffee[index];
+  }
+
+  public addToCart(arr){
+    this.orders = this.orders.concat(arr);
   }
 }

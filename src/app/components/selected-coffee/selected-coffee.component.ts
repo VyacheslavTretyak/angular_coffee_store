@@ -56,4 +56,8 @@ export class SelectedCoffeeComponent implements OnInit {
   addSugar(value:number, index:number) {
     this.order[index].sugar = value;
   }
+
+  addToCart() {
+    this.dataCoffee.addToCart(this.order);
+  }
 }

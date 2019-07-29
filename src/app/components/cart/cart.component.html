@@ -1,1 +1,6 @@
-<p>cart works!</p>
+<button mat-button routerLink="/">Back</button>
+<h1>Your orders</h1>
+
+<mat-list role="list" *ngFor="let item of orders">
+  <mat-list-item role="listitem"><span><b>{{item.title}}</b>   [{{item.sugar}}] sugar</span></mat-list-item>
+</mat-list>
